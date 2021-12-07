@@ -1,7 +1,13 @@
-# charity-funding-predictor
-Build a binary classifier (Machine Learning) for Alphabet Soup that determines whether an applicant will be successful.  Attempt to redesign the model in order to achieve a higher prediction success percentage.
+# charity-funding-predictor Overview
+The purpose of this analysis is to build a binary classifier (Machine Learning) for Alphabet Soup organization that can determine whether an applicant will be successful in its fundraising given numerous features from the application.  Each applicant asked for funding (ask_amt) and indicates its income amount.  Without knowing the amount raised, we have a feature called IS_SUCCESSFUL that we can use as our label data to train and test our model to see how well we can predict whether a new applicant will be successful given only the application data.
 
-## Preprocess the data (Round 1)
+## REGARDING EXTRA FEATURES
+These features must remain: application_type, classification, affiliation.  When removing them, predictions fall into the 60s. So they must be included.
+
+For these next features, when I removed them in preprocessing, we would continue to receive 73% accuracy; that likely means these features are not required for making the same 73% accuracy.  It does reduce the number of features.
+'SPECIAL_CONSIDERATIONS', 'USE_CASE', 'INCOME_AMT', 'STATUS', 'ASK_AMT', 'ORGANIZATION'
+
+## Data preprocessing
 Used conventional methods to preprocess the data: 
 1. eliminating features that do not contribute to the fundraiser successes;
 
@@ -29,5 +35,5 @@ Added one more hidden layer, went to 50 nodes per hidden layer and increased epo
 ## Round 4 (try a different activation algorithm 'tanh')
 Attempted to try different activation algorithm in evaluation step.  Used 'tanh' combination with 'relu' as well as exclusively 'tanh'.  Result: achieved ~73% accuracy in predicting succes with loss of 0.56.  This did not have an impact on improving the model.
 
-## Round 5:
-Try 
+## Round 5 (additional attempt to reduce features by more binning):
+Try binning a few other categories
